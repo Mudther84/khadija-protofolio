@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sustainable</title>
+    <title>خديجة الراقرقي | Sustainable</title>
     <!-- Bootstrap 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -30,6 +30,9 @@
         --border-light: #cbd5e1;
         --shadow-dark: rgba(0, 0, 0, 0.3);
         --shadow-light: rgba(0, 0, 0, 0.1);
+        /* Data Analyst Colors */
+        --data-primary: #4361ee;
+        --data-accent: #f72585;
       }
 
       body.dark-mode {
@@ -73,6 +76,116 @@
         font-weight: bold;
       }
 
+      /* === Hello Section === */
+      .hello-section {
+        padding: 100px 0;
+        background: linear-gradient(
+          135deg,
+          rgba(67, 97, 238, 0.15),
+          rgba(247, 37, 133, 0.1)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hello-section::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          var(--data-primary) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      .hello-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile-placeholder {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--data-primary),
+          var(--data-accent)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 4.5rem;
+        font-weight: bold;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .highlight-name {
+        color: var(--data-accent);
+        font-weight: bold;
+      }
+
+      /* === Tools Section === */
+      .tools-section {
+        padding: 80px 0;
+      }
+
+      .tools-title {
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: var(--data-primary);
+      }
+
+      .tools-subtitle {
+        color: #94a3b8;
+        margin-bottom: 50px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .tool-card {
+        text-align: center;
+        padding: 20px 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .tool-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .tool-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--card-dark);
+        border-radius: 16px;
+        margin: 0 auto 15px;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 12px var(--shadow-dark);
+      }
+
+      .light-mode .tool-icon {
+        background: var(--card-light);
+        box-shadow: 0 4px 12px var(--shadow-light);
+      }
+
+      .tool-name {
+        font-weight: 600;
+        font-size: 1.05rem;
+      }
+
+      /* Existing Sections */
       .hero-section {
         background: linear-gradient(135deg, var(--primary), var(--dark-bg));
         padding: 100px 0;
@@ -192,6 +305,12 @@
       }
 
       @media (max-width: 768px) {
+        .hello-section {
+          text-align: center;
+        }
+        .profile-placeholder {
+          margin: 0 auto 30px;
+        }
         .hero-text h1 {
           font-size: 2.2rem;
         }
@@ -229,38 +348,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">الرئيسية</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">من نحن</a></li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                >الأعمال</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">تصميم المواقع</a></li>
-                <li><a class="dropdown-item" href="#">تطبيقات الجوال</a></li>
-                <li><a class="dropdown-item" href="#">التصميم الجرافيكي</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#hero">الرئيسية</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                >المدونة</a
-              >
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">آخر المقالات</a></li>
-                <li><a class="dropdown-item" href="#">الدروس التعليمية</a></li>
-                <li><a class="dropdown-item" href="#">الأخبار</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#hello">من أنا</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">اتصل بنا</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">الوثائق</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">لماذا تختارنا؟</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tools">أجهزتي</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">اتصل بنا</a>
+            </li>
           </ul>
           <div class="d-flex ms-3">
             <button class="btn btn-light me-2" id="themeToggle">
@@ -272,6 +374,36 @@
         </div>
       </div>
     </nav>
+
+    <!-- Hello Section -->
+    <section class="hello-section" id="hello" data-aos="fade-up">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 hello-content">
+            <h1 class="display-4 fw-bold mb-4">
+              مرحباً! أنا <span class="highlight-name">خديجة الراقرقي</span>
+            </h1>
+            <p class="lead mb-4 fs-5">
+              أنا <strong>محللة بيانات</strong> و<strong>مطورة</strong> شغوفة
+              بتحويل البيانات الخام إلى رؤى استراتيجية قابلة للتنفيذ. أُحب
+              استكشاف الأنماط، بناء لوحات تحكم تفاعلية، وتصميم حلول تعتمد على
+              البيانات لدعم اتخاذ القرار الذكي.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#tools" class="btn btn-outline-light">استكشف أدواتي</a>
+              <a
+                href="mailto:moudaseryassin@gmail.com"
+                class="btn btn-light text-dark"
+                >تواصل معي</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 mt-lg-0 d-flex justify-content-center">
+            <div class="profile-placeholder">خ</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
@@ -315,7 +447,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section" data-aos="fade-up">
+    <section class="features-section" id="features" data-aos="fade-up">
       <div class="container">
         <div class="row text-center mb-5">
           <div class="col-12">
@@ -348,6 +480,83 @@
               <h4>دعم فوري</h4>
               <p>فريق دعم متاح 24/7 لمساعدتك في أي وقت.</p>
               <a href="#" class="text-decoration-none">اعرف أكثر →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section" data-aos="fade-up">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="tools-title">أجهزتي في تحليل البيانات والتطوير</h2>
+          <p class="tools-subtitle">
+            التقنيات والأدوات التي أستخدمها يوميًا لتنظيف البيانات، تحليلها،
+            تصورها، وبناء الحلول الذكية
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon text-primary">
+                <i class="fab fa-python"></i>
+              </div>
+              <div class="tool-name">Python</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon text-success">
+                <i class="fas fa-table"></i>
+              </div>
+              <div class="tool-name">Pandas / NumPy</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon text-info">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="tool-name">SQL</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon" style="color: #f2c811">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <div class="tool-name">Power BI</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon" style="color: #e9762b">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <div class="tool-name">Tableau</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon text-success">
+                <i class="fas fa-file-excel"></i>
+              </div>
+              <div class="tool-name">Excel</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon" style="background: #f37626; color: white">
+                <i class="fab fa-jupyter"></i>
+              </div>
+              <div class="tool-name">Jupyter</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="tool-card">
+              <div class="tool-icon"><i class="fab fa-git-alt"></i></div>
+              <div class="tool-name">Git / GitHub</div>
             </div>
           </div>
         </div>
@@ -611,7 +820,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" data-aos="fade-up">
+    <section class="contact-section" id="contact" data-aos="fade-up">
       <div class="container">
         <div class="row text-center mb-5">
           <h2 class="display-5 fw-bold text-white">تواصل معنا</h2>
@@ -683,11 +892,11 @@
           <div class="col-lg-2 col-md-4">
             <h5>روابط سريعة</h5>
             <ul class="list-unstyled footer-links">
-              <li><a href="#">الرئيسية</a></li>
-              <li><a href="#">من نحن</a></li>
-              <li><a href="#">الأعمال</a></li>
-              <li><a href="#">المدونة</a></li>
-              <li><a href="#">الأسعار</a></li>
+              <li><a href="#hero">الرئيسية</a></li>
+              <li><a href="#hello">من أنا</a></li>
+              <li><a href="#features">لماذا تختارنا؟</a></li>
+              <li><a href="#tools">أجهزتي</a></li>
+              <li><a href="#contact">اتصل بنا</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-4">
@@ -724,13 +933,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-      // Initialize AOS
-      AOS.init({
-        duration: 800,
-        once: true,
-      });
+      AOS.init({ duration: 800, once: true });
 
-      // Theme Toggle
       const themeToggle = document.getElementById("themeToggle");
       const body = document.body;
       let isDarkMode = true;
@@ -744,21 +948,17 @@
           : '<i class="fas fa-moon"></i>';
       });
 
-      // FAQ Accordion
       document.querySelectorAll(".faq-question").forEach((item) => {
         item.addEventListener("click", () => {
           const answer = item.nextElementSibling;
           const icon = item.querySelector("i");
           const isActive = answer.classList.contains("show");
-
-          // Close all
           document
             .querySelectorAll(".faq-answer")
             .forEach((el) => el.classList.remove("show"));
           document
             .querySelectorAll(".faq-question i")
             .forEach((i) => i.classList.remove("rotate-180"));
-
           if (!isActive) {
             answer.classList.add("show");
             icon.classList.add("rotate-180");
@@ -766,7 +966,6 @@
         });
       });
 
-      // Scroll to Top
       const scrollTopBtn = document.getElementById("scrollTopBtn");
       window.addEventListener("scroll", () => {
         scrollTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
@@ -775,14 +974,8 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
-      // Add rotation for chevron
       const style = document.createElement("style");
-      style.textContent = `
-            .rotate-180 {
-                transform: rotate(180deg) !important;
-                transition: transform 0.3s ease;
-            }
-        `;
+      style.textContent = `.rotate-180 { transform: rotate(180deg) !important; transition: transform 0.3s ease; }`;
       document.head.appendChild(style);
     </script>
   </body>
