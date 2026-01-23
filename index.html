@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -47,7 +47,9 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        transition: background-color 0.3s, color 0.3s;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
         overflow-x: hidden;
       }
 
@@ -110,22 +112,13 @@
         z-index: 1;
       }
 
-      .profile-placeholder {
+      .profile-image {
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        background: linear-gradient(
-          135deg,
-          var(--data-primary),
-          var(--data-accent)
-        );
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 4.5rem;
-        font-weight: bold;
+        object-fit: cover;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        border: 3px solid var(--data-primary);
       }
 
       .highlight-name {
@@ -268,7 +261,9 @@
         padding: 0 20px;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition:
+          max-height 0.3s ease,
+          padding 0.3s ease;
       }
 
       .faq-answer.show {
@@ -308,7 +303,7 @@
         .hello-section {
           text-align: center;
         }
-        .profile-placeholder {
+        .profile-image {
           margin: 0 auto 30px;
         }
         .hero-text h1 {
@@ -399,11 +394,19 @@
             </div>
           </div>
           <div class="col-lg-5 mt-5 mt-lg-0 d-flex justify-content-center">
-            <div class="profile-placeholder">خ</div>
+            <!-- تم استبدال placeholder بصورة فعلية -->
+            <img
+              src="/imgaes/khadija.jpeg"
+              alt="خديجة الراقرقي"
+              class="profile-image"
+            />
           </div>
         </div>
       </div>
     </section>
+
+    <!-- باقي الأقسام كما هي (Hero, Features, Tools, Pricing, ... إلخ) -->
+    <!-- ... -->
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
@@ -978,6 +981,6 @@
       style.textContent = `.rotate-180 { transform: rotate(180deg) !important; transition: transform 0.3s ease; }`;
       document.head.appendChild(style);
     </script>
-   
+    <p>khadija this test</p>
   </body>
 </html>
